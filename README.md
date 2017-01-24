@@ -1,4 +1,5 @@
-## Este crawler pretende coletar todas as atas de distribuição do STF
+## Repositório com códigos e produções sobre distribuição de processos no STF
+
 
 
 #### Questões relevantes a serem feitas:
