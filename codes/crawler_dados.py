@@ -10,7 +10,6 @@ from bs4 import BeautifulSoup
 import datetime
 from pymongo import MongoClient
 import re
-from multiprocessing import Pool
 #import socks
 #import socket
 #import subprocess
@@ -21,7 +20,7 @@ from multiprocessing import Pool
 dist_sites = MongoClient().stf.dist_sites
 
 data_inicial = datetime.date(year=2006, month=1, day=1)
-lista_datas = [ data_inicial + datetime.timedelta(days=x) for x in range(3790)]
+lista_datas = [ data_inicial + datetime.timedelta(days=x) for x in range(3760, 5000)]
 
 
 def recolhe_site_dia(dia):
@@ -46,9 +45,9 @@ def recolhe_site_dia(dia):
     print(dados)
     dist_sites.insert(dados)
 
-p = Pool(10)
-p.map(recolhe_site_dia, lista_datas)
-
+for i in lista_datas:
+    print(i)
+    recolhe_site_dia(i)
 #v = 0
 #for i in lista_datas:
 #    if ( v % 40 == 0 ):
