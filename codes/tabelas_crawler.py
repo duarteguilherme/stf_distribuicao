@@ -8,7 +8,7 @@ class Tabelas:
         pass
     def download(self, dados):
         site = dados.site
-        banco = MongoClient().stf.distribuicao
+        banco = MongoClient().stf.distribuicao_c
         pagina = requests.get(site)
         pagina = BeautifulSoup(pagina.text, 'html.parser')
         resultado_lista = pagina.find(attrs={"class":"resultadoLista"})
